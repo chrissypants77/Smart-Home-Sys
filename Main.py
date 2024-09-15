@@ -22,7 +22,7 @@ duration = 5
 # get_settings() Vars
 default_settings = {'voice_control': False, 'email': '', 'password': '', 'bulb_ips': ''}
 settings_file_path = "Misc/settings.txt"
-
+prevent_overload = 0
 # Global variable to store active alarms
 active_alarms = []
 
