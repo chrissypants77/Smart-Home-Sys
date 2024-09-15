@@ -87,15 +87,21 @@ def delete():
 def bulb_switch(bulb_on_off_button=None, switch=""):
     global bulb_state
     if bulb_state == "off" or switch == "on":
-        bulb_chris_1.bulb_state()
-        bulb_chris_2.bulb_state()
+        if bulb_chris_1.get_device_info()["device_on"] is False:
+            bulb_chris_1.bulb_state()
+        if bulb_chris_2.get_device_info()["device_on"] is False:
+            bulb_chris_2.bulb_state()
+
         bulb_state = "on"
         if bulb_on_off_button is not None:
             bulb_on_off_button.configure(text="Turn Off")
 
     elif bulb_state == "on" or switch == "off":
-        bulb_chris_1.bulb_state()
-        bulb_chris_2.bulb_state()
+        if bulb_chris_1.get_device_info()["device_on"] is True:
+            bulb_chris_1.bulb_state()
+        if bulb_chris_2.get_device_info()["device_on"] is True:
+            bulb_chris_2.bulb_state()
+
         bulb_state = "off"
         if bulb_on_off_button is not None:
             bulb_on_off_button.configure(text="Turn On")
