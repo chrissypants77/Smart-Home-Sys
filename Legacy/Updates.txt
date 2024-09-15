@@ -1,0 +1,25 @@
+=== V1 ===
+    - Info -
+        First Version. Voice settings do not work yet
+    - Changes -
+        [+] Lamp Tab
+        [+] Lamp On/Off
+        [+] Lamp Hue
+        [+] Lamp Brightness
+        [+] Lamp Reconnect
+        [+] Pc Tab
+        [+] Settings Tab
+        [+] Settings Voice Control On/Off
+
+=== V2 ===
+    - Info -
+        Made it so it Multi threads the voice control, making it so you can use the gui and the voice control at the
+        same time
+    - Changes -
+        [+] Voice_Control Multithread
+
+=== V3 ===
+    - Info -
+        Better expansion for commands
+    - Changes -
+        [+] Voice_Control easier expansion
