@@ -205,6 +205,7 @@ def bulb():
     bulb_bright_label.grid(row=1, column=0, padx=5, pady=5, sticky="n")
 
     bulb_brightness_scale = CTkSlider(bulb_brightness_frame, orientation="horizontal",
+                                      height=25,
                                       from_=1, to=100, number_of_steps=100, width=200,
                                       command=brightness)
     bulb_brightness_scale.set(device_brightness)
@@ -233,6 +234,7 @@ def bulb():
 
     bulb_hue_scale = CTkSlider(bulb_color_frame,
                                orientation="horizontal",
+                               height=25,
                                from_=0, to=360, number_of_steps=360, width=300,
                                command=color)
     bulb_hue_scale.grid(row=3, column=2,
@@ -246,6 +248,7 @@ def bulb():
 
     bulb_saturation_scale = CTkSlider(bulb_color_frame,
                                       orientation="horizontal",
+                                      height=25,
                                       from_=0, to=100, number_of_steps=360, width=300,
                                       command=color)
     bulb_saturation_scale.grid(row=4, column=2,
