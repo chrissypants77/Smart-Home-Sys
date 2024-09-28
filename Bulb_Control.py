@@ -24,23 +24,26 @@ class LightBulb:
         loop = True
         if self._bulb_item is None:
             print("[ERROR] - 005 - Bulb has not been initialized")
-        self._bulb_item.handshake()
-        self._bulb_item.login()
+
+        id_ = 0
         while loop:
             try:
                 self._bulb_item.handshake()
             except requests.exceptions.ConnectTimeout or requests.exceptions.ConnectionError:
                 print(f"Connection to bulb {self._bulb_num} failed retrying in 1 Second")
-                time.sleep(1)
+                time.sleep(5)
             except Exception as e:
-                if str(e) == "Failed to initialize protocol":
+                id_ += 1
+                if id_ == 5:
                     print(f"No connection could be established to light bulb number {self._bulb_num}")
-                    exit()
+                    loop = False
+                time.sleep(1) 
             else:
                 print(f"Bulb {self._bulb_num} Logged in ")
                 self._bulb_item.login()
                 loop = False
-
+        if id_ == 5:
+            exit()
         self._info = self.get_device_info()
 
     def create_bulb(self):
